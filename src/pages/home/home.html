@@ -1,22 +1,20 @@
-<!-- <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header> -->
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>
-      Member Area
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="logout()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-
+    <ion-navbar color="dark">
+      <ion-title>
+        Bienvenido!
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="home">
+    <div class="center">
+      <h2>Elige una Clase!</h2>
+    </div>
+    <button ion-button large full class="submit-btn" (click)="clasePps4A()">PPS-4A</button>
+    <button ion-button large full class="submit-btn" (click)="clasePps4B()">PPS-4B</button>
 </ion-content>
