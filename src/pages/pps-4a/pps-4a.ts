@@ -37,6 +37,7 @@ export class Pps_4aPage {
   public enviarMensaje(){
     //console.log("usuario:" +this.usuario +"----Mensaje: "+this.mensaje);
     this.agregarMensaje(this.mensaje);
+    this.mensaje = "";
   }
   agregarMensaje(mensaje:string)
   {
