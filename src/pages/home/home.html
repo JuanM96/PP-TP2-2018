@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="dark">
       <ion-title>
-        Bienvenido!
+        Bienvenido! {{usuario}}
       </ion-title>
       <ion-buttons end>
         <button ion-button (click)="logout()">
@@ -15,6 +15,10 @@
     <div class="center">
       <h2>Elige una Clase!</h2>
     </div>
-    <button ion-button large full class="submit-btn" (click)="clasePps4A()">PPS-4A</button>
-    <button ion-button large full class="submit-btn" (click)="clasePps4B()">PPS-4B</button>
+    <button ion-button large full class="submit-btn" (click)="clasePps4A()">
+        <img src="assets/clase4A.png" alt="" height="100%">
+    </button>
+    <button ion-button large full class="submit-btn" (click)="clasePps4B()">
+      <img src="assets/clase4B.png" alt="" height="100%">
+    </button>
 </ion-content>

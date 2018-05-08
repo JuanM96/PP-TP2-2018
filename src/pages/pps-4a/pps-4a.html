@@ -6,13 +6,32 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>pps-4a</ion-title>
+  <ion-navbar color = "dark">
+    <ion-title>Clase : PPS-4A</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="home">
+        <ion-list>
+            <ion-item *ngFor="let chat of ListadoDeChatsObservable  | async;">
+                <ion-row><div class="usuario">{{chat.usuario }}:</div> <div class="mensaje">{{ chat.mensaje }}</div> </ion-row>  <sup item-end> {{chat.tiempo| tiempoDesdeAhora  }} </sup>
+            </ion-item>
+        </ion-list>
+        
 </ion-content>
+<ion-footer no-shadow >
+  <ion-toolbar position="bottom" color="MiColor">
+    <form (ngSubmit)="enviarMensaje()" #registerForm="ngForm">
+      <ion-row>
+            <ion-input type="text" placeholder="Nuevo Mensaje" name="mensaje" class="input" [(ngModel)]="mensaje" required></ion-input>
+            <ion-buttons end>
+                <button ion-button class="submit-btn" icon-only type="submit" [disabled]="!registerForm.form.valid">
+                    <ion-icon name="arrow-round-forward"></ion-icon>
+                </button>
+            </ion-buttons>
+      </ion-row>
+    </form>
+  </ion-toolbar>
+</ion-footer>

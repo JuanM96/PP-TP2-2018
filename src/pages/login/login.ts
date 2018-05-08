@@ -45,7 +45,7 @@ export class LoginPage {
     this.showLoading();
     this.auth.signInWithEmail(this.registerCredentials)
       .then(
-        () => this.nav.setRoot(HomePage),
+        () => this.nav.setRoot(HomePage,{data:this.registerCredentials.email}),
         error => this.showError(error.message)//console.log(error.message)
       );
   }

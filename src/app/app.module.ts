@@ -12,6 +12,7 @@ import { RegistroPage } from '../pages/registro/registro';
 import { Pps_4aPage } from '../pages/pps-4a/pps-4a';
 import { Pps_4bPage } from '../pages/pps-4b/pps-4b';
 import { SplashAnimadoPage } from '../pages/splash-animado/splash-animado';
+import { TiempoDesdeAhoraPipe} from '../pipes/tiempo-desde-ahora/tiempo-desde-ahora';
 
 
 
@@ -22,6 +23,7 @@ import { AuthService } from '../providers/auth-service/auth-service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 export const firebaseConfig = {
     apiKey: "AIzaSyAe_Ni8qNd-a6qPUbgKKYKJBBZWRKaTAlM",
     authDomain: "pp-2018-8b015.firebaseapp.com",
@@ -42,13 +44,16 @@ export const firebaseConfig = {
     RegistroPage,
     SplashAnimadoPage,
     Pps_4aPage,
-    Pps_4bPage
+    Pps_4bPage,
+    TiempoDesdeAhoraPipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig,'pp-2018'),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
